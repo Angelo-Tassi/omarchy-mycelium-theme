@@ -8,11 +8,31 @@ A deep-violet [Omarchy](https://omarchy.org) theme built around a glowing psyche
 
 ## Install
 
+### Full install (recommended)
+
+This gives you everything in the screenshots: rounded corners, frosted blur, the glass bar and see-through Ghostty/foot terminals.
+
+```bash
+git clone --depth 1 https://github.com/Angelo-Tassi/omarchy-mycelium-theme ~/.config/omarchy/themes/mycelium \
+  && rm -rf ~/.config/omarchy/themes/mycelium/.git \
+  && omarchy theme set mycelium
+```
+
+Removing `.git` turns it into a local theme. Omarchy loads a local theme's `hyprland.lua` and terminal configs, but strips them from themes installed from git because they can run code, so read `hyprland.lua`, `ghostty.conf` and `foot.ini` before installing. They only set colors, rounding, blur and opacity.
+
+To update later, remove `~/.config/omarchy/themes/mycelium` and run the command again.
+
+### Standard install
+
 ```bash
 omarchy theme install https://github.com/Angelo-Tassi/omarchy-mycelium-theme
 ```
 
-Or open the Omarchy menu (`Super + Alt + Space`) → **Install → Style → Theme** and paste the repo URL.
+Or open the Omarchy menu (`Super + Alt + Space`) → **Install → Style → Theme** and paste the repo URL. You get the palette, the wallpaper, the amber borders and the bar tint, but not the rounding, blur or see-through terminals.
+
+### Glass bar
+
+For the frosted bar, turn off the bar's fully transparent mode: set `"transparent": false` under `bar` in `~/.config/omarchy/shell.json`.
 
 ## Palette
 
@@ -23,28 +43,6 @@ Or open the Omarchy menu (`Super + Alt + Space`) → **Install → Style → The
 | Active border | `#C37D10` |
 | Selection | `#5E1099` |
 | Accent | `#0080ff` |
-
-## Optional: the full glass look
-
-The screenshots use a few extras that Omarchy doesn't allow themes installed from git to ship, because they're Lua or terminal configs. To get them, add these to your own config.
-
-**Rounded corners and frosted blur.** Add to `~/.config/hypr/looknfeel.lua`:
-
-```lua
-hl.config({
-  decoration = {
-    rounding = 10,
-    blur = { enabled = true, size = 6, passes = 2, vibrancy = 0.2 },
-  },
-})
-
--- Frosted bar
-hl.layer_rule({ match = { namespace = "omarchy-bar" }, blur = true, ignore_alpha = 0.1 })
-```
-
-**See-through terminals.** Add `background-opacity = 0.9` to `~/.config/ghostty/config`, or `alpha=0.9` under `[colors-dark]` in `~/.config/foot/foot.ini`.
-
-The bar's frosted tint (`background-alpha = 0.15`) is already part of the theme's `shell.toml`. It looks best with the bar's transparent mode turned off.
 
 ## Credits
 
