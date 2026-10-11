@@ -1,3 +1,5 @@
+mode = "dark"
+
 accent = "#0080ff"
 hyprland_active_border = "#C37D10"
 selection = "#5E1099"
