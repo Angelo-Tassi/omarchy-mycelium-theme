@@ -42,7 +42,7 @@ For the frosted bar, turn off the bar's fully transparent mode: set `"transparen
 | Foreground | `#ffffff` |
 | Active border | `#C37D10` |
 | Selection | `#5E1099` |
-| Accent | `#0080ff` |
+| Accent | `#C37D10` |
 
 ## Credits
 
