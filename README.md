@@ -6,6 +6,10 @@ A deep-violet [Omarchy](https://omarchy.org) theme built around a glowing psyche
 
 ![Mycelium desktop](preview-desktop.png)
 
+| Omarchy menu | Password prompt |
+|---|---|
+| ![Omarchy menu](preview-menu.png) | ![Password prompt](preview-password.png) |
+
 ## Install
 
 ### Full install (recommended)
